@@ -1,0 +1,1074 @@
+{
+  "contractName": "Invoice",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "GSTN",
+          "type": "string"
+        },
+        {
+          "name": "CGSTN",
+          "type": "string"
+        },
+        {
+          "name": "INVNO",
+          "type": "string"
+        },
+        {
+          "name": "INVHASH",
+          "type": "string"
+        }
+      ],
+      "name": "createInvoice",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "invoiceId",
+          "type": "string"
+        }
+      ],
+      "name": "getCustomerGstn",
+      "outputs": [
+        {
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "invoiceId",
+          "type": "string"
+        }
+      ],
+      "name": "getSupplierGstn",
+      "outputs": [
+        {
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    }
+  ],
+  "bytecode": "0x6060604052341561000f57600080fd5b336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506107ab8061005e6000396000f300606060405260043610610062576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806319490e6a14610067578063503eaad71461018d5780638da5cb5b14610263578063bf922e44146102b8575b600080fd5b341561007257600080fd5b61018b600480803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509190803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509190803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509190803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509190505061038e565b005b341561019857600080fd5b6101e8600480803590602001908201803590602001908080601f01602080910402602001604051908101604052809392919081815260200183838082843782019150505050505091905050610475565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561022857808201518184015260208101905061020d565b50505050905090810190601f1680156102555780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b341561026e57600080fd5b61027661058b565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34156102c357600080fd5b610313600480803590602001908201803590602001908080601f016020809104026020016040519081016040528093929190818152602001838380828437820191505050505050919050506105b0565b6040518080602001828103825283818151815260200191508051906020019080838360005b83811015610353578082015181840152602081019050610338565b50505050905090810190601f1680156103805780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b606060405190810160405280858152602001848152602001828152506001836040518082805190602001908083835b6020831015156103e257805182526020820191506020810190506020830392506103bd565b6001836020036101000a038019825116818451168082178552505050505050905001915050908152602001604051809103902060008201518160000190805190602001906104319291906106c6565b50602082015181600101908051906020019061044e9291906106c6565b50604082015181600201908051906020019061046b9291906106c6565b5090505050505050565b61047d610746565b6001826040518082805190602001908083835b6020831015156104b55780518252602082019150602081019050602083039250610490565b6001836020036101000a03801982511681845116808217855250505050505090500191505090815260200160405180910390206001018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561057f5780601f106105545761010080835404028352916020019161057f565b820191906000526020600020905b81548152906001019060200180831161056257829003601f168201915b50505050509050919050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6105b8610746565b6001826040518082805190602001908083835b6020831015156105f057805182526020820191506020810190506020830392506105cb565b6001836020036101000a03801982511681845116808217855250505050505090500191505090815260200160405180910390206000018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156106ba5780601f1061068f576101008083540402835291602001916106ba565b820191906000526020600020905b81548152906001019060200180831161069d57829003601f168201915b50505050509050919050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061070757805160ff1916838001178555610735565b82800160010185558215610735579182015b82811115610734578251825591602001919060010190610719565b5b509050610742919061075a565b5090565b602060405190810160405280600081525090565b61077c91905b80821115610778576000816000905550600101610760565b5090565b905600a165627a7a723058206e7cef0b3a4d902fefe10243cd73e2b07653c8a3a05aeca15fadf912be286ab30029",
+  "deployedBytecode": "0x606060405260043610610062576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806319490e6a14610067578063503eaad71461018d5780638da5cb5b14610263578063bf922e44146102b8575b600080fd5b341561007257600080fd5b61018b600480803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509190803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509190803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509190803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509190505061038e565b005b341561019857600080fd5b6101e8600480803590602001908201803590602001908080601f01602080910402602001604051908101604052809392919081815260200183838082843782019150505050505091905050610475565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561022857808201518184015260208101905061020d565b50505050905090810190601f1680156102555780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b341561026e57600080fd5b61027661058b565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34156102c357600080fd5b610313600480803590602001908201803590602001908080601f016020809104026020016040519081016040528093929190818152602001838380828437820191505050505050919050506105b0565b6040518080602001828103825283818151815260200191508051906020019080838360005b83811015610353578082015181840152602081019050610338565b50505050905090810190601f1680156103805780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b606060405190810160405280858152602001848152602001828152506001836040518082805190602001908083835b6020831015156103e257805182526020820191506020810190506020830392506103bd565b6001836020036101000a038019825116818451168082178552505050505050905001915050908152602001604051809103902060008201518160000190805190602001906104319291906106c6565b50602082015181600101908051906020019061044e9291906106c6565b50604082015181600201908051906020019061046b9291906106c6565b5090505050505050565b61047d610746565b6001826040518082805190602001908083835b6020831015156104b55780518252602082019150602081019050602083039250610490565b6001836020036101000a03801982511681845116808217855250505050505090500191505090815260200160405180910390206001018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561057f5780601f106105545761010080835404028352916020019161057f565b820191906000526020600020905b81548152906001019060200180831161056257829003601f168201915b50505050509050919050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6105b8610746565b6001826040518082805190602001908083835b6020831015156105f057805182526020820191506020810190506020830392506105cb565b6001836020036101000a03801982511681845116808217855250505050505090500191505090815260200160405180910390206000018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156106ba5780601f1061068f576101008083540402835291602001916106ba565b820191906000526020600020905b81548152906001019060200180831161069d57829003601f168201915b50505050509050919050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061070757805160ff1916838001178555610735565b82800160010185558215610735579182015b82811115610734578251825591602001919060010190610719565b5b509050610742919061075a565b5090565b602060405190810160405280600081525090565b61077c91905b80821115610778576000816000905550600101610760565b5090565b905600a165627a7a723058206e7cef0b3a4d902fefe10243cd73e2b07653c8a3a05aeca15fadf912be286ab30029",
+  "sourceMap": "26:2360:0:-;;;525:54;;;;;;;;564:10;556:5;;:18;;;;;;;;;;;;;;;;;;26:2360;;;;;;",
+  "deployedSourceMap": "26:2360:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1915:220;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2263:121;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:2;8:100;;;99:1;94:3;90;84:5;80:1;75:3;71;64:6;52:2;49:1;45:3;40:15;;8:100;;;12:14;3:109;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;47:20:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2139:121;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:2;8:100;;;99:1;94:3;90;84:5;80:1;75:3;71;64:6;52:2;49:1;45:3;40:15;;8:100;;;12:14;3:109;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1915:220:0;2026:33;;;;;;;;;2038:4;2026:33;;;;2044:5;2026:33;;;;2051:7;2026:33;;;2006:10;2017:5;2006:17;;;;;;;;;;;;;36:153:-1;66:2;61:3;58:2;51:6;36:153;;;182:3;176:5;171:3;164:6;98:2;93:3;89;82:19;;123:2;118:3;114;107:19;;148:2;143:3;139;132:19;;36:153;;;274:1;267:3;263:2;259:3;254;250;246;315:4;311:3;305;299:5;295:3;356:4;350:3;344:5;340:3;389:7;380;377:2;372:3;365:6;3:399;;;;;;;;;;;;;;;;;;;;;;;;2006:53:0;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;1915:220;;;;:::o;2263:121::-;2331:6;;:::i;:::-;2352:10;2363:9;2352:21;;;;;;;;;;;;;36:153:-1;66:2;61:3;58:2;51:6;36:153;;;182:3;176:5;171:3;164:6;98:2;93:3;89;82:19;;123:2;118:3;114;107:19;;148:2;143:3;139;132:19;;36:153;;;274:1;267:3;263:2;259:3;254;250;246;315:4;311:3;305;299:5;295:3;356:4;350:3;344:5;340:3;389:7;380;377:2;372:3;365:6;3:399;;;;;;;;;;;;;;;;;;;;;;;;2352:27:0;;2345:34;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2263:121;;;:::o;47:20::-;;;;;;;;;;;;;:::o;2139:121::-;2207:6;;:::i;:::-;2228:10;2239:9;2228:21;;;;;;;;;;;;;36:153:-1;66:2;61:3;58:2;51:6;36:153;;;182:3;176:5;171:3;164:6;98:2;93:3;89;82:19;;123:2;118:3;114;107:19;;148:2;143:3;139;132:19;;36:153;;;274:1;267:3;263:2;259:3;254;250;246;315:4;311:3;305;299:5;295:3;356:4;350:3;344:5;340:3;389:7;380;377:2;372:3;365:6;3:399;;;;;;;;;;;;;;;;;;;;;;;;2228:27:0;;2221:34;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2139:121;;;:::o;26:2360::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.4.17;\n\ncontract Invoice {\n  address public owner;\n\n  struct InvoiceData{\n    string sgstn;\n    string cgstn;\n    string invoiceHash;\n    /* string state;\n    string pan; */\n    /* string name;\n    string billingAddress;\n    string shippingAddress;\n    string invoiceNo;\n    string invoiceDate;\n    int taxableAmount;\n    int totalTax;\n    int invoiceTotal; */\n\n  }\n  mapping (string => InvoiceData) invoiceMap;\n  /* mapping (string => string) supplierGSTN;\n  mapping (string => string) customerGSTN; */\n\n  function Invoice() public{\n    owner = msg.sender;\n  }\n  /* function createInvoice(string invoiceId, bytes32[] supplierDetail, bytes32[] customerDetail, bytes32[] invoiceDetail, int[] amountDetail) public {\n    suppliers[invoiceId] = Supplier(supplierDetail[0],supplierDetail[1],supplierDetail[2]);\n    customers[invoiceId] = Customer(customerDetail[0],customerDetail[1],customerDetail[2],customerDetail[3]);\n    invoices[invoiceId] = InvoiceInfo(invoiceDetail[0],invoiceDetail[1],invoiceDetail[2]);\n    amounts[invoiceId] = Amount(amountDetail[0],amountDetail[1],amountDetail[2]);\n  } */\n\n  /* function createInvoice(string GSTN,string STATE, string PAN, string CGSTN,string NAME,string BILLADD, string SHIPADD,string INVNO, string INVDATE, string REF, int TA, int TT, int IT) public {\n    invoiceMap[INVNO].sgstn = GSTN;\n    invoiceMap[INVNO].state = STATE;\n    invoiceMap[INVNO].pan = PAN;\n\n    invoiceMap[INVNO].cgstn = CGSTN;\n    invoiceMap[INVNO].name = NAME;\n    invoiceMap[INVNO].billingAddress = BILLADD;\n    invoiceMap[INVNO].shippingAddress = SHIPADD;\n\n    invoiceMap[INVNO].invoiceNo = INVNO;\n    invoiceMap[INVNO].invoiceDate = INVDATE;\n    invoiceMap[INVNO].referenceNo = REF;\n\n    invoiceMap[INVNO].taxableAmount = TA;\n    invoiceMap[INVNO].totalTax = TT;\n    invoiceMap[INVNO].invoiceTotal = IT;\n    /* supplierGSTN[INVNO] = GSTN;\n    customerGSTN[INVNO] = CGSTN;\n  } */\n\n  function createInvoice(string GSTN, string CGSTN,string INVNO,string INVHASH) public {\n    invoiceMap[INVNO] = InvoiceData(GSTN, CGSTN, INVHASH);\n    /* supplierGSTN[INVNO] = GSTN;\n    customerGSTN[INVNO] = CGSTN; */\n  }\n\n  function getSupplierGstn(string invoiceId) public constant returns (string) {\n    return invoiceMap[invoiceId].sgstn;\n  }\n  function getCustomerGstn(string invoiceId) public constant returns (string) {\n    return invoiceMap[invoiceId].cgstn;\n  }\n}\n",
+  "sourcePath": "/Academic/DAPP/sample5/contracts/Invoice.sol",
+  "ast": {
+    "attributes": {
+      "absolutePath": "/Academic/DAPP/sample5/contracts/Invoice.sol",
+      "exportedSymbols": {
+        "Invoice": [
+          72
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.4",
+            ".17"
+          ]
+        },
+        "id": 1,
+        "name": "PragmaDirective",
+        "src": "0:24:0"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            72
+          ],
+          "name": "Invoice",
+          "scope": 73
+        },
+        "children": [
+          {
+            "attributes": {
+              "constant": false,
+              "name": "owner",
+              "scope": 72,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "address",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "address",
+                  "type": "address"
+                },
+                "id": 2,
+                "name": "ElementaryTypeName",
+                "src": "47:7:0"
+              }
+            ],
+            "id": 3,
+            "name": "VariableDeclaration",
+            "src": "47:20:0"
+          },
+          {
+            "attributes": {
+              "canonicalName": "Invoice.InvoiceData",
+              "name": "InvoiceData",
+              "scope": 72,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "sgstn",
+                  "scope": 10,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string storage pointer",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string storage pointer"
+                    },
+                    "id": 4,
+                    "name": "ElementaryTypeName",
+                    "src": "96:6:0"
+                  }
+                ],
+                "id": 5,
+                "name": "VariableDeclaration",
+                "src": "96:12:0"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "cgstn",
+                  "scope": 10,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string storage pointer",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string storage pointer"
+                    },
+                    "id": 6,
+                    "name": "ElementaryTypeName",
+                    "src": "114:6:0"
+                  }
+                ],
+                "id": 7,
+                "name": "VariableDeclaration",
+                "src": "114:12:0"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "invoiceHash",
+                  "scope": 10,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "string storage pointer",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string storage pointer"
+                    },
+                    "id": 8,
+                    "name": "ElementaryTypeName",
+                    "src": "132:6:0"
+                  }
+                ],
+                "id": 9,
+                "name": "VariableDeclaration",
+                "src": "132:18:0"
+              }
+            ],
+            "id": 10,
+            "name": "StructDefinition",
+            "src": "72:311:0"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "invoiceMap",
+              "scope": 72,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "mapping(string memory => struct Invoice.InvoiceData storage ref)",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "type": "mapping(string memory => struct Invoice.InvoiceData storage ref)"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string storage pointer"
+                    },
+                    "id": 11,
+                    "name": "ElementaryTypeName",
+                    "src": "395:6:0"
+                  },
+                  {
+                    "attributes": {
+                      "contractScope": null,
+                      "name": "InvoiceData",
+                      "referencedDeclaration": 10,
+                      "type": "struct Invoice.InvoiceData storage pointer"
+                    },
+                    "id": 12,
+                    "name": "UserDefinedTypeName",
+                    "src": "405:11:0"
+                  }
+                ],
+                "id": 13,
+                "name": "Mapping",
+                "src": "386:31:0"
+              }
+            ],
+            "id": 14,
+            "name": "VariableDeclaration",
+            "src": "386:42:0"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "implemented": true,
+              "isConstructor": true,
+              "modifiers": [
+                null
+              ],
+              "name": "Invoice",
+              "payable": false,
+              "scope": 72,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 15,
+                "name": "ParameterList",
+                "src": "541:2:0"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 16,
+                "name": "ParameterList",
+                "src": "550:0:0"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "address"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 3,
+                              "type": "address",
+                              "value": "owner"
+                            },
+                            "id": 17,
+                            "name": "Identifier",
+                            "src": "556:5:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "sender",
+                              "referencedDeclaration": null,
+                              "type": "address"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 84,
+                                  "type": "msg",
+                                  "value": "msg"
+                                },
+                                "id": 18,
+                                "name": "Identifier",
+                                "src": "564:3:0"
+                              }
+                            ],
+                            "id": 19,
+                            "name": "MemberAccess",
+                            "src": "564:10:0"
+                          }
+                        ],
+                        "id": 20,
+                        "name": "Assignment",
+                        "src": "556:18:0"
+                      }
+                    ],
+                    "id": 21,
+                    "name": "ExpressionStatement",
+                    "src": "556:18:0"
+                  }
+                ],
+                "id": 22,
+                "name": "Block",
+                "src": "550:29:0"
+              }
+            ],
+            "id": 23,
+            "name": "FunctionDefinition",
+            "src": "525:54:0"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "createInvoice",
+              "payable": false,
+              "scope": 72,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "GSTN",
+                      "scope": 45,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string storage pointer"
+                        },
+                        "id": 24,
+                        "name": "ElementaryTypeName",
+                        "src": "1938:6:0"
+                      }
+                    ],
+                    "id": 25,
+                    "name": "VariableDeclaration",
+                    "src": "1938:11:0"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "CGSTN",
+                      "scope": 45,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string storage pointer"
+                        },
+                        "id": 26,
+                        "name": "ElementaryTypeName",
+                        "src": "1951:6:0"
+                      }
+                    ],
+                    "id": 27,
+                    "name": "VariableDeclaration",
+                    "src": "1951:12:0"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "INVNO",
+                      "scope": 45,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string storage pointer"
+                        },
+                        "id": 28,
+                        "name": "ElementaryTypeName",
+                        "src": "1964:6:0"
+                      }
+                    ],
+                    "id": 29,
+                    "name": "VariableDeclaration",
+                    "src": "1964:12:0"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "INVHASH",
+                      "scope": 45,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string storage pointer"
+                        },
+                        "id": 30,
+                        "name": "ElementaryTypeName",
+                        "src": "1977:6:0"
+                      }
+                    ],
+                    "id": 31,
+                    "name": "VariableDeclaration",
+                    "src": "1977:14:0"
+                  }
+                ],
+                "id": 32,
+                "name": "ParameterList",
+                "src": "1937:55:0"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 33,
+                "name": "ParameterList",
+                "src": "2000:0:0"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "struct Invoice.InvoiceData storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "type": "struct Invoice.InvoiceData storage ref"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 14,
+                                  "type": "mapping(string memory => struct Invoice.InvoiceData storage ref)",
+                                  "value": "invoiceMap"
+                                },
+                                "id": 34,
+                                "name": "Identifier",
+                                "src": "2006:10:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 29,
+                                  "type": "string memory",
+                                  "value": "INVNO"
+                                },
+                                "id": 35,
+                                "name": "Identifier",
+                                "src": "2017:5:0"
+                              }
+                            ],
+                            "id": 36,
+                            "name": "IndexAccess",
+                            "src": "2006:17:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": true,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "type": "struct Invoice.InvoiceData memory",
+                              "type_conversion": false
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_string_memory_ptr",
+                                      "typeString": "string memory"
+                                    },
+                                    {
+                                      "typeIdentifier": "t_string_memory_ptr",
+                                      "typeString": "string memory"
+                                    },
+                                    {
+                                      "typeIdentifier": "t_string_memory_ptr",
+                                      "typeString": "string memory"
+                                    }
+                                  ],
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 10,
+                                  "type": "type(struct Invoice.InvoiceData storage pointer)",
+                                  "value": "InvoiceData"
+                                },
+                                "id": 37,
+                                "name": "Identifier",
+                                "src": "2026:11:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 25,
+                                  "type": "string memory",
+                                  "value": "GSTN"
+                                },
+                                "id": 38,
+                                "name": "Identifier",
+                                "src": "2038:4:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 27,
+                                  "type": "string memory",
+                                  "value": "CGSTN"
+                                },
+                                "id": 39,
+                                "name": "Identifier",
+                                "src": "2044:5:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 31,
+                                  "type": "string memory",
+                                  "value": "INVHASH"
+                                },
+                                "id": 40,
+                                "name": "Identifier",
+                                "src": "2051:7:0"
+                              }
+                            ],
+                            "id": 41,
+                            "name": "FunctionCall",
+                            "src": "2026:33:0"
+                          }
+                        ],
+                        "id": 42,
+                        "name": "Assignment",
+                        "src": "2006:53:0"
+                      }
+                    ],
+                    "id": 43,
+                    "name": "ExpressionStatement",
+                    "src": "2006:53:0"
+                  }
+                ],
+                "id": 44,
+                "name": "Block",
+                "src": "2000:135:0"
+              }
+            ],
+            "id": 45,
+            "name": "FunctionDefinition",
+            "src": "1915:220:0"
+          },
+          {
+            "attributes": {
+              "constant": true,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "getSupplierGstn",
+              "payable": false,
+              "scope": 72,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "invoiceId",
+                      "scope": 58,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string storage pointer"
+                        },
+                        "id": 46,
+                        "name": "ElementaryTypeName",
+                        "src": "2164:6:0"
+                      }
+                    ],
+                    "id": 47,
+                    "name": "VariableDeclaration",
+                    "src": "2164:16:0"
+                  }
+                ],
+                "id": 48,
+                "name": "ParameterList",
+                "src": "2163:18:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 58,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string storage pointer"
+                        },
+                        "id": 49,
+                        "name": "ElementaryTypeName",
+                        "src": "2207:6:0"
+                      }
+                    ],
+                    "id": 50,
+                    "name": "VariableDeclaration",
+                    "src": "2207:6:0"
+                  }
+                ],
+                "id": 51,
+                "name": "ParameterList",
+                "src": "2206:8:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 51
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "member_name": "sgstn",
+                          "referencedDeclaration": 5,
+                          "type": "string storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "type": "struct Invoice.InvoiceData storage ref"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 14,
+                                  "type": "mapping(string memory => struct Invoice.InvoiceData storage ref)",
+                                  "value": "invoiceMap"
+                                },
+                                "id": 52,
+                                "name": "Identifier",
+                                "src": "2228:10:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 47,
+                                  "type": "string memory",
+                                  "value": "invoiceId"
+                                },
+                                "id": 53,
+                                "name": "Identifier",
+                                "src": "2239:9:0"
+                              }
+                            ],
+                            "id": 54,
+                            "name": "IndexAccess",
+                            "src": "2228:21:0"
+                          }
+                        ],
+                        "id": 55,
+                        "name": "MemberAccess",
+                        "src": "2228:27:0"
+                      }
+                    ],
+                    "id": 56,
+                    "name": "Return",
+                    "src": "2221:34:0"
+                  }
+                ],
+                "id": 57,
+                "name": "Block",
+                "src": "2215:45:0"
+              }
+            ],
+            "id": 58,
+            "name": "FunctionDefinition",
+            "src": "2139:121:0"
+          },
+          {
+            "attributes": {
+              "constant": true,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "getCustomerGstn",
+              "payable": false,
+              "scope": 72,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "invoiceId",
+                      "scope": 71,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string storage pointer"
+                        },
+                        "id": 59,
+                        "name": "ElementaryTypeName",
+                        "src": "2288:6:0"
+                      }
+                    ],
+                    "id": 60,
+                    "name": "VariableDeclaration",
+                    "src": "2288:16:0"
+                  }
+                ],
+                "id": 61,
+                "name": "ParameterList",
+                "src": "2287:18:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 71,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string storage pointer"
+                        },
+                        "id": 62,
+                        "name": "ElementaryTypeName",
+                        "src": "2331:6:0"
+                      }
+                    ],
+                    "id": 63,
+                    "name": "VariableDeclaration",
+                    "src": "2331:6:0"
+                  }
+                ],
+                "id": 64,
+                "name": "ParameterList",
+                "src": "2330:8:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 64
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "member_name": "cgstn",
+                          "referencedDeclaration": 7,
+                          "type": "string storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "type": "struct Invoice.InvoiceData storage ref"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 14,
+                                  "type": "mapping(string memory => struct Invoice.InvoiceData storage ref)",
+                                  "value": "invoiceMap"
+                                },
+                                "id": 65,
+                                "name": "Identifier",
+                                "src": "2352:10:0"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 60,
+                                  "type": "string memory",
+                                  "value": "invoiceId"
+                                },
+                                "id": 66,
+                                "name": "Identifier",
+                                "src": "2363:9:0"
+                              }
+                            ],
+                            "id": 67,
+                            "name": "IndexAccess",
+                            "src": "2352:21:0"
+                          }
+                        ],
+                        "id": 68,
+                        "name": "MemberAccess",
+                        "src": "2352:27:0"
+                      }
+                    ],
+                    "id": 69,
+                    "name": "Return",
+                    "src": "2345:34:0"
+                  }
+                ],
+                "id": 70,
+                "name": "Block",
+                "src": "2339:45:0"
+              }
+            ],
+            "id": 71,
+            "name": "FunctionDefinition",
+            "src": "2263:121:0"
+          }
+        ],
+        "id": 72,
+        "name": "ContractDefinition",
+        "src": "26:2360:0"
+      }
+    ],
+    "id": 73,
+    "name": "SourceUnit",
+    "src": "0:2387:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.18+commit.9cf6e910.Emscripten.clang"
+  },
+  "networks": {
+    "58342": {
+      "events": {},
+      "links": {},
+      "address": "0xa7fbc4761eab57743c2b50146466abf17e996f4d"
+    }
+  },
+  "schemaVersion": "1.0.1",
+  "updatedAt": "2018-01-21T05:54:52.072Z"
+}

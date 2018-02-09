@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Invoice</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <h1>Invoice Platform</h1>
+  <h2>Example Truffle Dapp</h2>
+  <br>
+  <h3>Enter Business Info</h3>
+  <label for ="GSTN">GSTN:</label><input type="text" id="supplierGstn" placeholder="e.g.John"></input>
+  <br><label for ="State">State:</label><input type="text" id="state" placeholder="e.g.Ryan"></input>
+  <br><label for ="Pan">PAN:</label><input type="text" id="pan" placeholder="e.g.Ryan"></input>
+
+  <h3>Enter Invoice Info</h3>
+  <label for ="invoiceNo">Invoice No.:</label><input type="text" id="invoiceNo" placeholder="e.g.John"></input>
+  <br><label for ="invoiceDate">Invoice Date:</label><input type="text" id="invoiceDate" placeholder="e.g.Ryan"></input>
+  <br><label for ="referenceNo">Reference No.:</label><input type="text" id="referenceNo" placeholder="e.g.Ryan"></input>
+
+  <h3>Enter Customer Info</h3>
+  <label for ="customerGstn">GSTN:</label><input type="text" id="customerGstn" placeholder="e.g.John"></input>
+  <br><label for ="customerName">Name:</label><input type="text" id="customerName" placeholder="e.g.John"></input>
+  <br><label for ="billingAddress">Billing Address:</label><input type="text" id="billingAddress" placeholder="e.g.Ryan"></input>
+  <br><label for ="shippingAddress">Shipping Address:</label><input type="text" id="shippingAddress" placeholder="e.g.Ryan"></input>
+
+  <h3>Amount Info</h3>
+  <label for ="taxableAmount">Taxable Amount:</label><input type="text" id="taxableAmount" placeholder="e.g.amount"></input>
+  <br><label for ="totalTax">Total Tax:</label><input type="text" id="totalTax" placeholder="e.g.amount"></input>
+  <br><label for ="invoiceTotal">Invoice Total:</label><input type="text" id="invoiceTotal" placeholder="e.g.amount"></input>
+  
+  <br><br><button id="btn" onclick="App.sendInvoice()">Send Invoice</button>
+  <br><br>
+  <div id="log" style="color:green;"></div>
+  <span id="status"></span>
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
